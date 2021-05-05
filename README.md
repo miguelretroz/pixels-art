@@ -91,8 +91,8 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   * Se não estiver, mude para a branch `master`
     * Exemplo: `git checkout master`
   * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b mariazinha-project-pixels-art`
+    * Você deve criar uma branch no seguinte formato: `nome-sobrenome-nome-do-projeto`
+    * Exemplo: `git checkout -b mariazinha-silva-pixels-art`
 
 4. Crie na raiz do projeto os arquivos que você precisará desenvolver:
   * Verifique que você está na raiz do projeto
@@ -113,13 +113,13 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin mariazinha-project-pixels-art`
+  * Usando o exemplo anterior: `git push -u origin mariazinha-silva-pixels-art`
 
 7. Crie um novo `Pull Request` _(PR)_
   * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-012-project-pixels-art/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Adicione uma descrição para o _Pull Request_, um título que o identifique, e clique no botão verde _"Create pull request"_. Crie da seguinte forma: `[JOAOZINHO] Projeto Pixels Art`
+  * Adicione uma descrição para o _Pull Request_, um título que o identifique, e clique no botão verde _"Create pull request"_. Crie da seguinte forma: `[MARIAZINHA-SILVA] Projeto Pixels Art`
   * Adicione uma descrição para o _Pull Request_, um título claro que o identifique, e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
   * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-012-project-pixels-art/pulls) e confira que o seu _Pull Request_ está criado
@@ -424,14 +424,12 @@ O não cumprimento de um requisito, total ou parcialmente, impactará em sua ava
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque outras pessoas da sua turma.
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
   * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-012`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo **Lint** estão resolvidas! ⚠
 
 ---
 
@@ -447,6 +445,4 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
 
 Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=Turma%2012)
 
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
-
----
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido 😉.
