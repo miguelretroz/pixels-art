@@ -120,9 +120,20 @@ function eventApplier(elementsList, event, action) {
 
 function selectColor(event) {
   const currentSelected = document.querySelector('.selected');
-  const target = event.target
+  const eventTargeted = event.target;
   currentSelected.className = 'color';
-  target.className += ' selected';
+  eventTargeted.className += ' selected';
 }
 
 eventApplier(colorsList, 'click', selectColor);
+
+function coloringPixels(event) {
+  const eventTargeted = event.target;
+  const colorSelected = document.querySelector('.selected');
+  if (eventTargeted.classList.contains('pixel')) {
+    eventTargeted.style.backgroundColor = window.getComputedStyle(colorSelected, null)
+      .getPropertyValue('background-color');
+  }
+}
+
+document.addEventListener('click', coloringPixels);
