@@ -83,3 +83,29 @@ function colorsBoxesGenerator(boxesAmount) {
 }
 
 colorsBoxesGenerator(3);
+
+function linesOfPixelBoard(lineAmount) {
+  const pixelBoard = document.querySelector('#pixel-board');
+  for (let index = 1; index <= lineAmount; index += 1) {
+    const line = document.createElement('div');
+    line.className = 'line';
+    pixelBoard.appendChild(line);
+  }
+}
+
+linesOfPixelBoard(5);
+
+function pixelsOfPixelBoard() {
+  const lineAmount = document.getElementsByClassName('line').length;
+  const lines = document.getElementsByClassName('line');
+  for (let line = 0; line < lineAmount; line += 1) {
+    for (let index = 0; index < lineAmount; index += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      pixel.style.backgroundColor = 'white';
+      lines[line].appendChild(pixel);
+    }
+  }
+}
+
+pixelsOfPixelBoard();
