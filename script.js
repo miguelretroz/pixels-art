@@ -60,11 +60,11 @@ function rgbCodesArrayGenerator(boxesAmount) {
 
 function rgbFormatArray(boxesAmount) {
   const colorsCodes = rgbCodesArrayGenerator(boxesAmount);
-  const rgbFormatArray = [];
+  const rgbFormat = [];
   for (const rgbCodes of colorsCodes) {
-    rgbFormatArray.push(`rgb(${rgbCodes[0]}, ${rgbCodes[1]}, ${rgbCodes[2]})`);
+    rgbFormat.push(`rgb(${rgbCodes[0]}, ${rgbCodes[1]}, ${rgbCodes[2]})`);
   }
-  return rgbFormatArray;
+  return rgbFormat;
 }
 
 function colorsBoxesGenerator(boxesAmount) {
@@ -139,9 +139,8 @@ function coloringPixels(event) {
 document.addEventListener('click', coloringPixels);
 
 function clearPixelsBoard() {
-  console.log('clicou')
   const pixelsList = document.getElementsByClassName('pixel');
-  for (let pixel of pixelsList) {
+  for (const pixel of pixelsList) {
     pixel.style.backgroundColor = 'white';
   }
 }
@@ -181,7 +180,7 @@ function resizePixelsBoard() {
     linesOfPixelBoard(newSizeValue);
     pixelsOfPixelBoard();
     inputBoardSize.value = newSizeValue;
-  } 
+  }
 }
 
 btnGenerateBoard.addEventListener('click', resizePixelsBoard);
