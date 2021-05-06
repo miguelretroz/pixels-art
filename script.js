@@ -71,7 +71,7 @@ function colorsBoxesGenerator(boxesAmount) {
   const colorsPalette = document.querySelector('#color-palette');
   const colors = rgbFormatArray(boxesAmount);
   const blackBox = document.createElement('div');
-  blackBox.className = 'color';
+  blackBox.className = 'color selected';
   blackBox.style.backgroundColor = 'rgb(0, 0, 0)';
   colorsPalette.appendChild(blackBox);
   for (let index = 0; index < boxesAmount; index += 1) {
@@ -109,3 +109,20 @@ function pixelsOfPixelBoard() {
 }
 
 pixelsOfPixelBoard();
+
+const colorsList = document.getElementsByClassName('color');
+
+function eventApplier(elementsList, event, action) {
+  for (const element of elementsList) {
+    element.addEventListener(event, action);
+  }
+}
+
+function selectColor(event) {
+  const currentSelected = document.querySelector('.selected');
+  const target = event.target
+  currentSelected.className = 'color';
+  target.className += ' selected';
+}
+
+eventApplier(colorsList, 'click', selectColor);
