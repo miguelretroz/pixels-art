@@ -137,3 +137,15 @@ function coloringPixels(event) {
 }
 
 document.addEventListener('click', coloringPixels);
+
+function clearPixelsBoard() {
+  console.log('clicou')
+  const pixelsList = document.getElementsByClassName('pixel');
+  for (let pixel of pixelsList) {
+    pixel.style.backgroundColor = 'white';
+  }
+}
+
+const btnClearBoard = document.getElementById('clear-board');
+
+btnClearBoard.addEventListener('click', clearPixelsBoard);
