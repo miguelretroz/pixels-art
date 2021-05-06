@@ -36,7 +36,7 @@ function boxesColorCheckerInsideLoop(outLoopIndex, arrayLength, codesArray) {
 function boxesColorsCodesChecker(rgbAllBoxesCodesArray) {
   const listLength = rgbAllBoxesCodesArray.length;
   for (const CodesArrayIndex in rgbAllBoxesCodesArray) {
-    const outLoopIndex = parseInt(CodesArrayIndex);
+    const outLoopIndex = parseInt(CodesArrayIndex, 10);
     if (boxesColorCheckerInsideLoop(outLoopIndex,
       listLength, rgbAllBoxesCodesArray) === false) {
       return false;
@@ -149,3 +149,28 @@ function clearPixelsBoard() {
 const btnClearBoard = document.getElementById('clear-board');
 
 btnClearBoard.addEventListener('click', clearPixelsBoard);
+
+const btnGenerateBoard = document.getElementById('generate-board');
+const inputBoardSize = document.getElementById('board-size');
+
+function pixelsRemover() {
+  const pixelsListLength = document.getElementsByClassName('line').length;
+  const pixelsBoard = document.getElementById('pixel-board');
+  for (let index = 0; index < pixelsListLength; index += 1) {
+    pixelsBoard.removeChild(document.querySelector('.line'));
+  }
+}
+
+function resizePixelsBoard() {
+  if (inputBoardSize.value === '') {
+    alert('Board inválido!');
+  } else {
+    const newSizeValue = parseInt(inputBoardSize.value, 10);
+    console.log(newSizeValue);
+    pixelsRemover();
+    linesOfPixelBoard(newSizeValue);
+    pixelsOfPixelBoard();
+  } 
+}
+
+btnGenerateBoard.addEventListener('click', resizePixelsBoard);
