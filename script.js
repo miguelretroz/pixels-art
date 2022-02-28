@@ -144,7 +144,6 @@ const btnClearBoard = document.getElementById('clear-board');
 
 btnClearBoard.addEventListener('click', clearPixelsBoard);
 
-const btnGenerateBoard = document.getElementById('generate-board');
 const inputBoardSize = document.getElementById('board-size');
 
 function resizeValueChecker(newSizeValue) {
@@ -165,16 +164,12 @@ function pixelsRemover() {
 }
 
 function resizePixelsBoard() {
-  if (inputBoardSize.value === '') {
-    alert('Board inválido!');
-  } else {
-    let newSizeValue = parseInt(inputBoardSize.value, 10);
-    newSizeValue = resizeValueChecker(newSizeValue);
-    pixelsRemover();
-    linesOfPixelBoard(newSizeValue);
-    pixelsOfPixelBoard();
-    inputBoardSize.value = newSizeValue;
-  }
+  let newSizeValue = inputBoardSize.value === '' ? 5 : parseInt(inputBoardSize.value, 10);
+  newSizeValue = resizeValueChecker(newSizeValue);
+  pixelsRemover();
+  linesOfPixelBoard(newSizeValue);
+  pixelsOfPixelBoard();
+  inputBoardSize.value = newSizeValue;
 }
 
-btnGenerateBoard.addEventListener('click', resizePixelsBoard);
+inputBoardSize.addEventListener('input', resizePixelsBoard);
