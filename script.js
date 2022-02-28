@@ -35,14 +35,11 @@ function boxesColorCheckerInsideLoop(outLoopIndex, arrayLength, codesArray) {
 
 function boxesColorsCodesChecker(rgbAllBoxesCodesArray) {
   const listLength = rgbAllBoxesCodesArray.length;
-  for (const CodesArrayIndex in rgbAllBoxesCodesArray) {
-    const outLoopIndex = parseInt(CodesArrayIndex, 10);
-    if (boxesColorCheckerInsideLoop(outLoopIndex,
-      listLength, rgbAllBoxesCodesArray) === false) {
-      return false;
-    }
-  }
-  return true;
+  const checkResult = Object.keys(rgbAllBoxesCodesArray).map((codesArrayIndex) => {
+    const outLoopIndex = parseInt(codesArrayIndex, 10);
+    return boxesColorCheckerInsideLoop(outLoopIndex, listLength, rgbAllBoxesCodesArray);
+  });
+  return !checkResult.includes(false);
 }
 
 function rgbCodesArrayGenerator(boxesAmount) {
@@ -60,10 +57,7 @@ function rgbCodesArrayGenerator(boxesAmount) {
 
 function rgbFormatArray(boxesAmount) {
   const colorsCodes = rgbCodesArrayGenerator(boxesAmount);
-  const rgbFormat = [];
-  for (const rgbCodes of colorsCodes) {
-    rgbFormat.push(`rgb(${rgbCodes[0]}, ${rgbCodes[1]}, ${rgbCodes[2]})`);
-  }
+  const rgbFormat = colorsCodes.map(([r, g, b]) => `rgb(${r}, ${g}, ${b})`);
   return rgbFormat;
 }
 
@@ -113,9 +107,9 @@ pixelsOfPixelBoard();
 const colorsList = document.getElementsByClassName('color');
 
 function eventApplier(elementsList, event, action) {
-  for (const element of elementsList) {
+  Object.values(elementsList).forEach((element) => {
     element.addEventListener(event, action);
-  }
+  });
 }
 
 function selectColor(event) {
@@ -140,9 +134,10 @@ document.addEventListener('click', coloringPixels);
 
 function clearPixelsBoard() {
   const pixelsList = document.getElementsByClassName('pixel');
-  for (const pixel of pixelsList) {
-    pixel.style.backgroundColor = 'white';
-  }
+  Object.values(pixelsList).forEach((pixel) => {
+    const pixelCopy = pixel;
+    pixelCopy.style.backgroundColor = 'white';
+  });
 }
 
 const btnClearBoard = document.getElementById('clear-board');
@@ -175,7 +170,6 @@ function resizePixelsBoard() {
   } else {
     let newSizeValue = parseInt(inputBoardSize.value, 10);
     newSizeValue = resizeValueChecker(newSizeValue);
-    console.log(newSizeValue);
     pixelsRemover();
     linesOfPixelBoard(newSizeValue);
     pixelsOfPixelBoard();
