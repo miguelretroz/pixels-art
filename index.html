@@ -15,18 +15,19 @@
         <link rel="shortcut icon" href="./fav.ico" />
     </head>
     <body>
-        <h1 id="title">Pixels Art</h1>
+        <!-- <h1 id="title">Pixels Art</h1> -->
+        <img alt="pixels art" src="./images/Pixels Art.svg" width="200px"/>
         <label for="color-palette-size">
           Tamanho da paleta de cores:
           <input type="number" id="color-palette-size" min="3" max="500" value="3">
         </label>
         <div id="color-palette"></div>
         <div id="input-container">
-            <button type="button" id="clear-board">Limpar quadro</button>
             <label for="board-size">
               Tamanho do quadro:
               <input type="number" id="board-size" min="5" max="50" value="5">
             </label>
+            <button type="button" id="clear-board">Limpar quadro</button>
         </div>
         <div id="pixel-board"></div>
         <script src="./script.js"></script>
