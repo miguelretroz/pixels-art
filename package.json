@@ -11,7 +11,7 @@
   },
   "scripts": {
     "lint": "eslint --no-inline-config --ext .js,.jsx --no-error-on-unmatched-pattern -c .eslintrc.json .",
-    "lint:styles": "stylelint **/*.css --config .stylelintrc.json --ignore-disables --allow-empty-input"
+    "lint:styles": "stylelint **/*.css --config .stylelintrc.json --allow-empty-input"
   },
   "dependencies": {
     "eslint-config-trybe-fundamentals": "1.1.0"

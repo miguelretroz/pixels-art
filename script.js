@@ -144,6 +144,12 @@ btnClearBoard.addEventListener('click', clearPixelsBoard);
 const inputBoardSize = document.getElementById('board-size');
 const inputColorPaletteSize = document.getElementById('color-palette-size');
 
+const btnBoardSizeIncrease = document.getElementById('board-size-increase');
+const btnBoardSizeDecrease = document.getElementById('board-size-decrease');
+
+const btnPaletteSizeIncrease = document.getElementById('palette-size-increase');
+const btnPaletteSizeDecrease = document.getElementById('palette-size-decrease');
+
 function resizeValueChecker(newSizeValue, min = 5, max = 50) {
   if (newSizeValue < min) {
     return min;
@@ -167,8 +173,9 @@ function colorsRemover() {
   colorsList.forEach((color) => color.remove());
 }
 
-function resizePixelsBoard() {
-  let newSizeValue = inputBoardSize.value === '' ? 5 : parseInt(inputBoardSize.value, 10);
+function resizePixelsBoard(_, increment = 0) {
+  let newSizeValue = inputBoardSize.value === ''
+    ? 5 + increment : parseInt(inputBoardSize.value, 10) + increment;
   newSizeValue = resizeValueChecker(newSizeValue);
   pixelsRemover();
   linesOfPixelBoard(newSizeValue);
@@ -176,10 +183,12 @@ function resizePixelsBoard() {
   inputBoardSize.value = newSizeValue;
 }
 
-function resizeColorPalette() {
-  let newSizeValue = 3;
+function resizeColorPalette(_, increment = 0) {
+  let newSizeValue = 3 + increment;
   if (inputColorPaletteSize.value !== '') {
-    newSizeValue = resizeValueChecker(parseInt(inputColorPaletteSize.value, 10), 3, 500);
+    newSizeValue = resizeValueChecker(
+      parseInt(inputColorPaletteSize.value, 10) + increment, 3, 500,
+    );
     inputColorPaletteSize.value = newSizeValue;
   }
   colorsRemover();
@@ -188,3 +197,9 @@ function resizeColorPalette() {
 
 inputBoardSize.addEventListener('input', resizePixelsBoard);
 inputColorPaletteSize.addEventListener('input', resizeColorPalette);
+
+btnBoardSizeIncrease.addEventListener('click', () => resizePixelsBoard('', 1));
+btnBoardSizeDecrease.addEventListener('click', () => resizePixelsBoard('', -1));
+
+btnPaletteSizeIncrease.addEventListener('click', () => resizeColorPalette('', 1));
+btnPaletteSizeDecrease.addEventListener('click', () => resizeColorPalette('', -1));

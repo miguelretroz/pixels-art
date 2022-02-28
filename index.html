@@ -17,16 +17,30 @@
     <body>
         <!-- <h1 id="title">Pixels Art</h1> -->
         <img alt="pixels art" src="./images/Pixels Art.svg" width="200px"/>
-        <label for="color-palette-size">
-          Tamanho da paleta de cores:
-          <input type="number" id="color-palette-size" min="3" max="500" value="3">
-        </label>
+        <div class="color-palette-inputs-container">
+          <button class="increment-button" type="button" id="palette-size-increase">
+            <img alt="Up arrow" src="./images/up-arrow.svg" />
+          </button>
+          <label for="color-palette-size">
+            Tamanho da paleta de cores:
+            <input type="number" id="color-palette-size" min="3" max="500" value="3">
+          </label>
+          <button class="increment-button" type="button" id="palette-size-decrease">
+            <img alt="Down arrow" src="./images/down-arrow.svg" />
+          </button>
+        </div>
         <div id="color-palette"></div>
         <div id="input-container">
+            <button class="increment-button" type="button" id="board-size-increase">
+              <img alt="Up arrow" src="./images/up-arrow.svg" />
+            </button>
             <label for="board-size">
               Tamanho do quadro:
               <input type="number" id="board-size" min="5" max="50" value="5">
             </label>
+            <button class="increment-button" type="button" id="board-size-decrease">
+              <img alt="Down arrow" src="./images/down-arrow.svg" />
+            </button>
             <button type="button" id="clear-board">Limpar quadro</button>
         </div>
         <div id="pixel-board"></div>

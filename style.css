@@ -1,5 +1,7 @@
 html * {
   font-family: Roboto, sans-serif;
+  font-weight: 600;
+  color: #585858;
 }
 
 body {
@@ -7,8 +9,7 @@ body {
   background-color: #a0ffdc;
   display: flex;
   flex-flow: column wrap;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding: 20px 10px;
   background-image: url('./images/pixel-art-bg.png');
   background-size: 100px;
 }
@@ -17,11 +18,77 @@ h1 {
   font-size: 2em;
 }
 
+img {
+  padding-bottom: 20px;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button , input::-webkit-inner-spin-button {
+
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+/* stylelint-disable-next-line selector-no-qualifying-type */
+input[ type = 'number' ] {
+
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -moz-appearance: textfield;
+}
+
+.color-palette-inputs-container {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.increment-button {
+  background: none;
+  border: none;
+  height: 20px;
+  overflow-y: hidden;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+}
+
+.increment-button img {
+  width: 20px;
+  padding: 0;
+}
+
+#palette-size-increase {
+  top: -20px;
+}
+
+#palette-size-decrease {
+  top: 21px;
+}
+
+#board-size-increase {
+  right: 8px;
+  top: -10px;
+}
+
+#board-size-decrease {
+  right: 8px;
+  top: 31px;
+}
+
 #color-palette {
+  align-items: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 .color {
@@ -39,6 +106,17 @@ h1 {
   display: flex;
   flex-flow: column wrap;
   padding: 10px 0;
+  position: relative;
+}
+
+#clear-board {
+  background-color: rgb(231, 23, 23);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 900;
+  margin-top: 25px;
+  padding: 5px 0;
 }
 
 #pixel-board {
