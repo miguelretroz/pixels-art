@@ -61,6 +61,19 @@ function rgbFormatArray(boxesAmount) {
   return rgbFormat;
 }
 
+function selectColor(event) {
+  const currentSelected = document.querySelector('.selected');
+  const eventTargeted = event.target;
+  currentSelected.className = 'color';
+  eventTargeted.className += ' selected';
+}
+
+function eventApplier(elementsList, event, action) {
+  Object.values(elementsList).forEach((element) => {
+    element.addEventListener(event, action);
+  });
+}
+
 function colorsBoxesGenerator(boxesAmount) {
   const colorsPalette = document.querySelector('#color-palette');
   const colors = rgbFormatArray(boxesAmount);
@@ -74,6 +87,7 @@ function colorsBoxesGenerator(boxesAmount) {
     box.style.backgroundColor = colors[index];
     colorsPalette.appendChild(box);
   }
+  eventApplier(document.getElementsByClassName('color'), 'click', selectColor);
 }
 
 colorsBoxesGenerator(3);
@@ -104,23 +118,6 @@ function pixelsOfPixelBoard() {
 
 pixelsOfPixelBoard();
 
-const colorsList = document.getElementsByClassName('color');
-
-function eventApplier(elementsList, event, action) {
-  Object.values(elementsList).forEach((element) => {
-    element.addEventListener(event, action);
-  });
-}
-
-function selectColor(event) {
-  const currentSelected = document.querySelector('.selected');
-  const eventTargeted = event.target;
-  currentSelected.className = 'color';
-  eventTargeted.className += ' selected';
-}
-
-eventApplier(colorsList, 'click', selectColor);
-
 function coloringPixels(event) {
   const eventTargeted = event.target;
   const colorSelected = document.querySelector('.selected');
@@ -145,12 +142,13 @@ const btnClearBoard = document.getElementById('clear-board');
 btnClearBoard.addEventListener('click', clearPixelsBoard);
 
 const inputBoardSize = document.getElementById('board-size');
+const inputColorPaletteSize = document.getElementById('color-palette-size');
 
-function resizeValueChecker(newSizeValue) {
-  if (newSizeValue < 5) {
-    return 5;
-  } if (newSizeValue > 50) {
-    return 50;
+function resizeValueChecker(newSizeValue, min = 5, max = 50) {
+  if (newSizeValue < min) {
+    return min;
+  } if (newSizeValue > max) {
+    return max;
   }
   return newSizeValue;
 }
@@ -163,6 +161,12 @@ function pixelsRemover() {
   }
 }
 
+function colorsRemover() {
+  const colorsList = Object.values(document.getElementsByClassName('color'));
+
+  colorsList.forEach((color) => color.remove());
+}
+
 function resizePixelsBoard() {
   let newSizeValue = inputBoardSize.value === '' ? 5 : parseInt(inputBoardSize.value, 10);
   newSizeValue = resizeValueChecker(newSizeValue);
@@ -172,4 +176,15 @@ function resizePixelsBoard() {
   inputBoardSize.value = newSizeValue;
 }
 
+function resizeColorPalette() {
+  let newSizeValue = 3;
+  if (inputColorPaletteSize.value !== '') {
+    newSizeValue = resizeValueChecker(parseInt(inputColorPaletteSize.value, 10), 3, 500);
+    inputColorPaletteSize.value = newSizeValue;
+  }
+  colorsRemover();
+  colorsBoxesGenerator(newSizeValue);
+}
+
 inputBoardSize.addEventListener('input', resizePixelsBoard);
+inputColorPaletteSize.addEventListener('input', resizeColorPalette);

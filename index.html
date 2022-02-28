@@ -3,11 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>Pixels Art</title>
-        <link rel="shortcut icon" href="public/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="shortcut icon" href="./public/favicon.ico" />
     </head>
     <body>
         <h1 id="title">Pixels Art</h1>
+        <label for="color-palette-size">
+          Tamanho da paleta de cores:
+          <input type="number" id="color-palette-size" min="3" max="500" value="3">
+        </label>
         <div id="color-palette"></div>
         <div id="input-container">
             <button type="button" id="clear-board">Limpar quadro</button>
