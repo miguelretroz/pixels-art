@@ -92,7 +92,7 @@ input[ type = 'number' ] {
 }
 
 .color {
-  border: solid 1px black;
+  border: solid 1px #585858;
   display: inline-block;
   width: 35px;
   height: 35px;
@@ -121,8 +121,8 @@ input[ type = 'number' ] {
 
 #pixel-board {
   display: table;
-  border-top: solid 1px black;
-  border-right: solid 1px black;
+  border-top: solid 1px #585858;
+  border-right: solid 1px #585858;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -134,8 +134,8 @@ input[ type = 'number' ] {
 .pixel {
   width: 40px;
   height: 40px;
-  border-left: solid 1px black;
-  border-bottom: solid 1px black;
+  border-left: solid 1px #585858;
+  border-bottom: solid 1px #585858;
   display: table-cell;
 }
 
