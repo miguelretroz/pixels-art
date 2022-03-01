@@ -21,6 +21,40 @@ A ideia do projeto foi construir uma paleta de cores aleatórios e um quadro de 
     - JavaScript
 </a>
 
+## 🖱️Uso
+O foco da aplicação é a criação de incríveis obras de arte.
+
+<a href="#">
+  <img align="center" src="./images/pixels-art-03.gif">
+</a>
+
+### 🌈Paleta de cores
+
+As cores são geradas aleatoriamente, o que pode instigar o uso da criatividade.
+
+O algoritmo de geração de cores faz um checagem e gera as cores totalmente diferentes entre si, sem repetições.
+
+É possivel alterar o tamanho da paleta de cores, utilizado os botões de incremento e decremento ou digitar uma quantidade diretamente no campo de input.
+> A quantidade mínima de cores é 3 e a máxima é 500
+
+<a href="#">
+  <img align="center" src="./images/pixels-art-palette.gif">
+</a>
+
+### 🖼️ Quadro de pixels
+
+Também é possivel alterar o tamanho do quadro de pixels, utilizado os botões de incremento e decremento ou digitar uma quantidade diretamente no campo de input.
+<a href="#">
+  <img align="center" src="./images/pixels-art-board.gif">
+</a>
+
+###
+
+A aplicação pode ser acessada através do deploy realizado na plataforma gratuita do <a href="https://vercel.com/" >Vercel</a>:
+
+🔹<a  href="https://miguel-retroz-pixels-art.vercel.app" target="_blank"><img alt="vercel logo" 
+  align="center" src="./images/vercel-logo.svg" width="20"/> Vercel - Deploy da aplicação</a>
+
 ## 🪛 Desenvolvimento
 Basta realizar o clone do projeto e abrir o arquivo ``index.html`` em seu navegador para executar a aplicação.
 
