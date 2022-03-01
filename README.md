@@ -44,6 +44,7 @@ O algoritmo de geração de cores faz um checagem e gera as cores totalmente dif
 ### 🖼️ Quadro de pixels
 
 Também é possivel alterar o tamanho do quadro de pixels, utilizado os botões de incremento e decremento ou digitar uma quantidade diretamente no campo de input.
+> A quantidade mínima de pixels é 5 e a máxima é 50
 <a href="#">
   <img align="center" src="./images/pixels-art-board.gif">
 </a>
