@@ -64,17 +64,17 @@ Basta realizar o clone do projeto e abrir o arquivo ``index.html`` em seu navega
 
 Para executá-los é necessário realizar a instalação das dependências:
 ```bash
-  npm install
+npm install
 ```
 
 Para executar o `ESLint` e realizar a análise estática do código **JavaScript**:
 ```bash
-  npm run lint
+npm run lint
 ```
 
 Para executar o `StyleLint` e realizar a análise estática do código **CSS**:
 ```bash
-  npm run lint:styles
+npm run lint:styles
 ```
 
 ## 👤Contatos
