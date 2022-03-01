@@ -25,7 +25,7 @@ A ideia do projeto foi construir uma paleta de cores aleatórios e um quadro de 
 O foco da aplicação é a criação de incríveis obras de arte.
 
 <a href="#">
-  <img align="center" src="./images/pixels-art-03.gif">
+  <img align="center" src="./images/pixels-art.gif">
 </a>
 
 ### 🌈Paleta de cores
