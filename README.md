@@ -1,4 +1,4 @@
-# 🎨 Pixel Art
+# 🎨 Pixels Art
 
 > Este foi o terceiro projeto que realizei como `Tryber`
 
@@ -20,6 +20,27 @@ A ideia do projeto foi construir uma paleta de cores aleatórios e um quadro de 
   <img align="center" src="./images/js-logo.svg" height="20">
     - JavaScript
 </a>
+
+## 🪛 Desenvolvimento
+Basta realizar o clone do projeto e abrir o arquivo ``index.html`` em seu navegador para executar a aplicação.
+
+### ⚙️Scripts
+> O projeto possui dois scripts.
+
+Para executá-los é necessário realizar a instalação das dependências:
+```bash
+  npm install
+```
+
+Para executar o `ESLint` e realizar a análise estática do código **JavaScript**:
+```bash
+  npm run lint
+```
+
+Para executar o `StyleLint` e realizar a análise estática do código **CSS**:
+```bash
+  npm run lint:styles
+```
 
 ## 👤Contatos
 🔹<a href = "mailto:contato.miguelretroz@gmail.com" target="_blank">
