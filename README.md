@@ -5,7 +5,7 @@
 Este foi meu primeiro projeto com a triade da web (`HTML`, `CSS` e `JavaScript`), utilizando conceitos básicos do `DOM`, como eventListers e seletores.
 
 A ideia do projeto foi construir uma paleta de cores aleatórios e um quadro de pixels, onde os usuários utilizando as cores da paleta podem criar obras de arte.
-## 🛠️ Contruído com
+## 🛠️ Construído com
   🔹<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
     <img align="center" src="./images/html5-logo.svg" height="20">
     - HTML
