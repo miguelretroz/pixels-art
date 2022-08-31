@@ -2,9 +2,9 @@
 
 > Este foi o terceiro projeto que realizei como `Tryber`
 
-Este foi meu primeiro projeto com a triade da web (`HTML`, `CSS` e `JavaScript`), utilizando conceitos básicos do `DOM`, como eventListers e seletores.
+Este foi meu primeiro projeto com a triade da web (`HTML`, `CSS` e `JavaScript`), utilizando conceitos básicos do `DOM`, como `eventListers` e `seletores`.
 
-A ideia do projeto foi construir uma paleta de cores aleatórios e um quadro de pixels, onde os usuários utilizando as cores da paleta podem criar obras de arte.
+A ideia do projeto era construir uma paleta de cores aleatórias e um quadro de pixels, onde os usuários utilizando as cores da paleta poderiam criar obras de arte INCRÍVEIS.
 ## 🛠️ Construído com
   🔹<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
     <img align="center" src="./images/html5-logo.svg" height="20">
